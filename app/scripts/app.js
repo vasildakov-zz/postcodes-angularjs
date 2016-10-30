@@ -2,20 +2,22 @@
 
 /**
  * @ngdoc overview
- * @name postcodesAngularjsApp
+ * @name Postcodes
  * @description
- * # postcodesAngularjsApp
+ * # Postcodes
  *
  * Main module of the application.
  */
-angular
+
+var app = angular
   .module('Postcodes', [
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize'
-  ])
-  .config(function ($routeProvider) {
+  ]);
+  
+app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

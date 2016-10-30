@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name postcodesAngularjsApp.controller:AboutCtrl
+ * @name Postcodes.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the postcodesAngularjsApp
+ * Controller of the Postcodes
  */
 angular.module('Postcodes')
   .controller('AboutCtrl', function () {
