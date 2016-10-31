@@ -7,11 +7,8 @@
  * # MainCtrl
  * Controller of the Postcodes
  */
-angular.module('Postcodes')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+app.controller('MainCtrl', ['$scope', function ($scope) {
+    $scope.awesomeThings = [1,2,3, 'home'];
+
+    console.log($scope.awesomeThings);
+}]);

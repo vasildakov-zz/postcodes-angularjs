@@ -7,11 +7,8 @@
  * # AboutCtrl
  * Controller of the Postcodes
  */
-angular.module('Postcodes')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+app.controller('AboutCtrl', ['$scope', function ($scope) {
+    $scope.awesomeThings = [1,2,3, 'about'];
+
+    console.log($scope.awesomeThings);
+}]);

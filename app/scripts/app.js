@@ -16,7 +16,7 @@ var app = angular
     'ngRoute',
     'ngSanitize'
   ]);
-  
+
 app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {

@@ -3,21 +3,22 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('postcodesAngularjsApp'));
+  beforeEach(module('Postcodes'));
 
-  var MainCtrl,
-    scope;
+  var controller,
+      scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+
+    controller = $controller('MainCtrl', {
       $scope: scope
       // place here mocked dependencies
     });
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(MainCtrl.awesomeThings.length).toBe(3);
+    expect(scope.awesomeThings.length).toBe(4);
   });
 });

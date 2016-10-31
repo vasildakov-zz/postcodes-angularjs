@@ -9,7 +9,7 @@ module.exports = function(config) {
     autoWatch: true,
 
     // base path, that will be used to resolve files and exclude
-    basePath: '../',
+    basePath : '../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
     // as well as any additional frameworks (requirejs/chai/sinon/...)
@@ -21,8 +21,14 @@ module.exports = function(config) {
     files: [
       // bower:js
       // endbower
+      'bower_components/angular/angular.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-route/angular-route.js',
+      'bower_components/angular-cookies/angular-cookies.js',
+      'bower_components/angular-resource/angular-resource.js',
+      'bower_components/angular-sanitize/angular-sanitize.js',
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
+      //'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
 
@@ -30,8 +36,20 @@ module.exports = function(config) {
     exclude: [
     ],
 
+    coverageReporter: {
+      reporters: [
+        { type: 'html', dir: 'coverage/' }
+      ]
+    },
+
+    preprocessors: {
+        'app/scripts/**/*.js': ['coverage']
+    },
+
+    reporters: ['progress', 'coverage'],
+
     // web server port
-    port: 8080,
+    port: 9876,
 
     // Start these browsers, currently available:
     // - Chrome
@@ -47,8 +65,10 @@ module.exports = function(config) {
 
     // Which plugins to enable
     plugins: [
-      'karma-phantomjs-launcher',
-      'karma-jasmine'
+        'karma-jasmine',
+        'karma-coverage',
+        'karma-chrome-launcher',
+        'karma-phantomjs-launcher'
     ],
 
     // Continuous Integration mode
