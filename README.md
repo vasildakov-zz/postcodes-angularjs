@@ -1,5 +1,7 @@
 # postcodes-angularjs
 
+[![Build Status](https://travis-ci.org/vasildakov/postcodes-angularjs.svg?branch=master)](https://travis-ci.org/vasildakov/postcodes-angularjs)
+
 ### Installation
 
 ```
