@@ -7,6 +7,9 @@ var lazypipe = require('lazypipe');
 var rimraf = require('rimraf');
 var wiredep = require('wiredep').stream;
 var runSequence = require('run-sequence');
+var Server = require('karma').Server;
+
+var isTravis = process.env.TRAVIS || false;
 
 var yeoman = {
   app: require('./bower.json').appPath || 'app',
@@ -122,14 +125,23 @@ gulp.task('serve:prod', function() {
   });
 });
 
-gulp.task('test', ['start:server:test'], function () {
+/* gulp.task('test', ['start:server:test'], function () {
   var testToFiles = paths.testRequire.concat(paths.scripts, paths.test);
   return gulp.src(testToFiles)
     .pipe($.karma({
       configFile: paths.karma,
       action: 'watch'
     }));
+}); */
+
+
+gulp.task('test', function (done) {
+  new Server({
+    configFile: require('path').resolve('test/karma.conf.js'),
+    singleRun: isTravis
+  }, done).start();
 });
+
 
 // inject bower components
 gulp.task('bower', function () {
