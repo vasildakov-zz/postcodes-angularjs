@@ -1,10 +1,17 @@
 language: node_js
+
 node_js:
   - "0.10"
+
 before_script:
   - npm install -g bower
   - npm install -g gulp
   - npm install phantomjs
   - npm install -g karma
   - bower install
-  - gulp build
+
+script: node_modules/karma/bin/karma start test/karma.conf.js --single-run
+
+notifications:
+  webhooks: https://coveralls.io/webhook?repo_token=J3su6AG7YqL0b9e6s1Qw08kOSHgUbbFpf
+

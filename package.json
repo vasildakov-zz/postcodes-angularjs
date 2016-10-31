@@ -2,6 +2,7 @@
   "name": "Postcodes",
   "private": true,
   "devDependencies": {
+    "coveralls": "^2.11.14",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "2.3.1",
     "gulp-cache": "^0.2.10",
