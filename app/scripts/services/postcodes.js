@@ -11,13 +11,9 @@ app.factory('Postcodes',  ['$http', function($http) {
 
     var Postcodes = {};
 
-    Postcodes.get = function (postcode) {
-        return [2, 4, 6, 8];
-    }
-
 
     Postcodes.query = function (postcode) {
-        //
+        return $http.get('/api/postcodes?q=' + postcode);
     }
 
 
