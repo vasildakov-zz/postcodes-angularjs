@@ -38,7 +38,8 @@ module.exports = function(config) {
 
     coverageReporter: {
       reporters: [
-        { type: 'html', dir: 'build/reports/coverage/'}
+        { type: 'html', dir: 'build/reports/coverage/'},
+        { type: 'lcov', dir: 'build/reports/coverage/'}
       ]
     },
 
@@ -46,7 +47,7 @@ module.exports = function(config) {
         'app/scripts/**/*.js': ['coverage']
     },
 
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'coverage', 'coveralls'],
 
     // web server port
     port: 9876,
@@ -67,6 +68,7 @@ module.exports = function(config) {
     plugins: [
         'karma-jasmine',
         'karma-coverage',
+        'karma-coveralls',
         'karma-chrome-launcher',
         'karma-phantomjs-launcher'
     ],

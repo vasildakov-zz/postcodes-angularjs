@@ -24,3 +24,12 @@ $ npm test
 ```
 $ gulp build
 ```
+
+
+### References
+
+Writing AngularJS Documentation
+https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation
+
+Starting off with NgDocs
+http://www.podpea.co.uk/blog/starting-off-with-ngdocs/
