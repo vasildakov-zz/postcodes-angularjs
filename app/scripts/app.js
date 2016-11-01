@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc overview
- * @name Postcodes
+ * @name app
  * @description
  * # Postcodes
  *
@@ -10,7 +10,7 @@
  */
 
 var app = angular
-  .module('Postcodes', [
+  .module('app', [
     'ngCookies',
     'ngResource',
     'ngRoute',

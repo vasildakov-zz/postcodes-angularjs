@@ -2,13 +2,14 @@
 
 /**
  * @ngdoc function
- * @name Postcodes.controller:MainCtrl
+ * @name app.controller:MainCtrl
  * @description
  * # MainCtrl
  * Controller of the Postcodes
  */
-app.controller('MainCtrl', ['$scope', function ($scope) {
-    $scope.awesomeThings = [1,2,3, 'home'];
+app.controller('MainCtrl', function ($scope, Postcodes) {
+    $scope.awesomeThings = [1, 2, 3, 'home'];
 
-    console.log($scope.awesomeThings);
-}]);
+    $scope.postcode = Postcodes.get();
+    //console.log($scope.postcode);
+});

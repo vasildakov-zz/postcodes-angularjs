@@ -3,7 +3,7 @@
 describe('Controller: AboutCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('Postcodes'));
+  beforeEach(module('app'));
 
   var controller,
       scope;
