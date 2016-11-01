@@ -1,6 +1,8 @@
 # postcodes-angularjs
 
 [![Build Status](https://travis-ci.org/vasildakov/postcodes-angularjs.svg?branch=master)](https://travis-ci.org/vasildakov/postcodes-angularjs)
+[![Coverage Status](https://coveralls.io/repos/github/vasildakov/postcodes-angularjs/badge.svg?branch=master)](https://coveralls.io/github/vasildakov/postcodes-angularjs?branch=master)
+
 
 ### Installation
 
