@@ -1,5 +1,7 @@
 describe('Postcodes factory', function(){
 
+    var host = 'http://localhost:9000';
+
     var httpBackend,
         Postcodes;
 
@@ -23,7 +25,7 @@ describe('Postcodes factory', function(){
             var postcode = 'TW8 8FB';
 
             httpBackend
-                .when('GET', '/api/postcodes?q=' + postcode)
+                .when('GET', host + '/api/postcodes?q=' + postcode)
                 .respond(200, [
                     'TW8 8FB'
                 ]);
@@ -45,7 +47,7 @@ describe('Postcodes factory', function(){
             var postcode = 'TW8 8';
 
             httpBackend
-                .when('GET', '/api/autocomplete/' + postcode)
+                .when('GET', host + '/api/autocomplete/' + postcode)
                 .respond(200, [
                     "TW8 8FA",
                     "TW8 8FB",
@@ -71,7 +73,7 @@ describe('Postcodes factory', function(){
                 longitude = -0.312577856018865;
 
             httpBackend
-                .when('GET', '/api/nearest?latitude=' + latitude + '&longitude=' + longitude)
+                .when('GET', host + '/api/nearest?latitude=' + latitude + '&longitude=' + longitude)
                 .respond(200, [
                     "TW8 1",
                     "TW8 2",

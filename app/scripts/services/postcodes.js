@@ -7,7 +7,9 @@
  * # Postcodes
  * Postcodes
  */
-app.factory('Postcodes',  ['$http', function($http) {
+app.factory('Postcodes', function($http, $q) {
+
+    var host = 'http://localhost:9000';
 
     var Postcodes = {};
 
@@ -19,13 +21,13 @@ app.factory('Postcodes',  ['$http', function($http) {
     * @returns Returns something
     */
     Postcodes.query = function (postcode) {
-        return $http.get('/api/postcodes?q=' + postcode).then(
+        return $http.get(host + '/api/postcodes?q=' + postcode).then(
             function success(response) {
-                console.log('succeeded', response);
+                //console.log('succeeded', response);
                 return response;
             },
             function error(response) {
-                console.log('failed', response);
+                //console.log('failed', response);
             }
         );
     }
@@ -38,11 +40,18 @@ app.factory('Postcodes',  ['$http', function($http) {
     * @returns {Object}
     */
     Postcodes.lookup = function (postcode) {
-        return $http({
-            url: '/api/lookup',
-            method: "GET",
-            params: {postcode: postcode}
-        });
+
+        var promise = $http.get(host + '/api/postcodes/' + postcode).then(
+            function success(response) {
+                return response;
+            },
+            function error(response) {
+                return $q.reject(response);
+                //console.log('failed', response);
+            }
+        );
+
+        return promise;
     }
 
 
@@ -75,7 +84,7 @@ app.factory('Postcodes',  ['$http', function($http) {
     */
     Postcodes.nearest = function (latitude, longitude) {
         return $http({
-            url: '/api/nearest?latitude=' + latitude + '&longitude=' + longitude,
+            url: host + '/api/nearest?latitude=' + latitude + '&longitude=' + longitude,
             method: "GET"
         });
     }
@@ -110,7 +119,7 @@ app.factory('Postcodes',  ['$http', function($http) {
     * @description Returns an array with postcodes
     */
     Postcodes.autocomplete = function (postcode) {
-        return $http.get('/api/autocomplete/' + postcode);
+        return $http.get(host + '/api/autocomplete/' + postcode);
 
         /*
         return $http({
@@ -134,4 +143,4 @@ app.factory('Postcodes',  ['$http', function($http) {
 
     return Postcodes;
 
-}]);
+});

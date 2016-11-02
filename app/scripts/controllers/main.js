@@ -10,8 +10,12 @@
 app.controller('MainCtrl', function ($scope, Postcodes) {
     $scope.awesomeThings = [1, 2, 3, 'home'];
 
-    $scope.postcode = "TW8 8FB";
 
-    //$scope.postcode = Postcodes.query('TW8 8FB');
-    //console.log($scope.postcode);
+    Postcodes.lookup('TW8 8FB').then(function(response){
+        $scope.response = response;
+    });
+
+
+    // $scope.postcode = JSON.stringify(response, null, 4)
+    // console.log($scope.response);
 });
