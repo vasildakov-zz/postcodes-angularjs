@@ -1,8 +1,9 @@
 'use strict';
 
 /*
-http://www.bradoncode.com/blog/2015/07/13/unit-test-promises-angualrjs-q/
-http://www.antonydenyer.co.uk/blog/2014/07/29/mocking-promise-based-services-in-angularjs/
+  [1] http://www.bradoncode.com/blog/2015/07/13/unit-test-promises-angualrjs-q/
+  [2] http://www.antonydenyer.co.uk/blog/2014/07/29/mocking-promise-based-services-in-angularjs/
+  [3] http://www.syntaxsuccess.com/viewarticle/comprehensive-guide-to-unit-testing-in-angularjs
 */
 
 describe('MainCtrl', function () {
