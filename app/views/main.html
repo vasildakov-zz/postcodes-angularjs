@@ -1,5 +1,27 @@
 <div ng-controller="MainCtrl">
-  <div ng-model="response">
-    <pre>{{response.data | json}}</pre>
-  </div>
+
+    <form class="form-inline">
+
+        <div class="form-group">
+
+            <input type="text"
+                   class="form-control"
+                   ng-model="postcode"
+                   name="postcode"
+                   placeholder="eg. TW8 8FB">
+
+            <button ng-click="lookup(postcode)"
+                    ng-init=""
+                    type="submit"
+                    class="btn btn-primary">Check</button>
+
+        </div>
+    </form>
+
+    <br>
+
+    <div ng-model="response">
+        <pre>{{response.data | json}}</pre>
+    </div>
+
 </div>

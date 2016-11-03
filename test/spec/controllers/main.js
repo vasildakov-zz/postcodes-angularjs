@@ -34,7 +34,7 @@ describe('MainCtrl', function () {
 
     }));
 
-    describe('when returning promises', function () {
+    describe('when lookup is called', function () {
         var response = {
             status: 200,
             data: {
@@ -44,8 +44,6 @@ describe('MainCtrl', function () {
             }
         };
 
-        //console.log(response);
-
         beforeEach(function () {
             Postcodes.lookup.and.returnValue(q.when(response));
 
@@ -54,6 +52,7 @@ describe('MainCtrl', function () {
                 Postcodes: Postcodes
             });
 
+            scope.lookup();
             scope.$apply();
         });
 

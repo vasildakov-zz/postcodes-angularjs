@@ -41,6 +41,7 @@ app.factory('Postcodes', function($http, $q) {
     */
     Postcodes.lookup = function (postcode) {
 
+        //return $http.get(host + '/api/postcodes/' + postcode);
         var promise = $http.get(host + '/api/postcodes/' + postcode).then(
             function success(response) {
                 return response;
