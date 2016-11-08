@@ -22,10 +22,10 @@
 
     <br>
 
-    <div ng-model="response">
+    <!--div ng-model="response">
         <pre>{{response.data | json}}</pre>
-    </div>
+    </div-->
 
-    <pre><code ng-bind-html="data | highlight | unsafe" language="json"></code></pre>
+    <div hljs hljs-source="data" hljs-language="json"> </div>
 
 </div>
