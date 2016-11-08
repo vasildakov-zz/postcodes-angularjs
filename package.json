@@ -21,6 +21,7 @@
     "gulp-useref": "^3.0.0",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.2.4",
+    "highlight": "^0.2.4",
     "jasmine-core": "^2.5.2",
     "js2coffee": "^2.2.0",
     "jshint-stylish": "^1.0.0",

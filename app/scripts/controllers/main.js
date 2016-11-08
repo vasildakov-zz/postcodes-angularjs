@@ -18,6 +18,7 @@ app.controller('MainCtrl', function ($scope, Postcodes) {
     $scope.lookup = function(postcode) {
         Postcodes.lookup(postcode).then(function(response){
             $scope.response = response;
+            $scope.data = JSON.stringify(response.data);
         });
     };
 

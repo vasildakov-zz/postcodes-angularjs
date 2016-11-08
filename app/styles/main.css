@@ -81,3 +81,43 @@ body {
     border-bottom: 0;
   }
 }
+
+
+.api {
+    color: #999;
+}
+
+.api .badge {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 3px;
+    background-color: #6792AB;
+    border: none;
+    color: #FFF;
+}
+.api .param {
+    padding: 6px 12px;
+    padding-left: 3px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline:none;
+}
+
+ input:-webkit-autofill,
+ input:-webkit-autofill:hover,
+ input:-webkit-autofill:focus,
+ input:-webkit-autofill:active {
+ -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  }
+
+
+.param input:focus, .param input:hover {
+  outline: .5em solid black !important;
+  box-shadow:none;
+  border-color:transparent;;
+ }

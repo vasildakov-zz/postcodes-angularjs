@@ -1,20 +1,22 @@
 <div ng-controller="MainCtrl">
 
     <form class="form-inline">
-
-        <div class="form-group">
-
+        <h4>Lookup for a postcode</h4>
+        <div class="form-group api">
+            <h4>
+            <span class="badge">GET</span>
+            <span>api.postcodes.co.uk/postcodes/</span>
             <input type="text"
-                   class="form-control"
+                   class="form-control param"
                    ng-model="postcode"
                    name="postcode"
-                   placeholder="eg. TW8 8FB">
+                   placeholder=":postcode">
 
             <button ng-click="lookup(postcode)"
                     ng-init=""
                     type="submit"
-                    class="btn btn-primary">Check</button>
-
+                    class="btn btn-default pull-right">Request</button>
+            </h4>
         </div>
     </form>
 
@@ -23,5 +25,7 @@
     <div ng-model="response">
         <pre>{{response.data | json}}</pre>
     </div>
+
+    <pre><code ng-bind-html="data | highlight | unsafe" language="json"></code></pre>
 
 </div>
