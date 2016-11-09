@@ -27,10 +27,10 @@ app.controller('MainCtrl', function ($scope, Postcodes) {
         Postcodes.lookup(postcode).then(function(response){
 
             var str  = "";
-                str += "GET /postcodes/"+postcode+"\n"; 
+                str += "GET /postcodes/"+postcode+"\n";
                 str += "HTTP/1.1 Host: example.org\n";
                 str += "Content-Type: application/json; charset=utf-8\n";
-                str += "Content-Length: 124\n";
+                str += "Content-Length: 124\n\n";
                 str += JSON.stringify(response.data, null, 4);
             $scope.response = response;
             //$scope.data = JSON.stringify(response.data, null, Number(4));
