@@ -2,7 +2,7 @@
 
     <form class="form-inline">
         <h4>Lookup for a postcode</h4>
-        <div class="form-group api">
+        <div class="api">
             <h4>
             <span class="badge">GET</span>
             <span>api.postcodes.co.uk/postcodes/</span>
@@ -12,8 +12,8 @@
                    name="postcode"
                    placeholder=":postcode">
 
-            <button ng-click="lookup(postcode)"
-                    ng-init=""
+            <button ng-click="lookup(postcode); show=true"
+                    ng-model="show"
                     type="submit"
                     class="btn btn-default pull-right">Request</button>
             </h4>
@@ -25,7 +25,8 @@
     <!--div ng-model="response">
         <pre>{{response.data | json}}</pre>
     </div-->
-
-    <div hljs hljs-source="data" hljs-language="json"> </div>
+    <div ng-show="show" class="ng-cloak animate-show" ng-click="show=false">
+        <div hljs hljs-source="data" hljs-language="json"></div>
+    </div>
 
 </div>

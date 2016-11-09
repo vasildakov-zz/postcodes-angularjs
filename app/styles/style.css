@@ -15,6 +15,7 @@
 .api .param {
     padding: 6px 12px;
     padding-left: 3px;
+    border-radius: 0px;
     font-size: 18px;
     font-weight: 400;
     border: none;
@@ -22,6 +23,7 @@
     box-shadow: none;
     -webkit-box-shadow: none;
     outline:none;
+    width: 100px;
 }
 
  input:-webkit-autofill,
@@ -39,4 +41,12 @@
 pre {
   background-color: transparent;
   padding: 0;
+}
+
+
+.animate-show {
+  transition: all linear 1s;
+}
+.animate-show.ng-hide {
+  opacity: 0;
 }
